@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit" ?>
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<?page title="EstoqueAdmin - Login"?>
+
+<zk xmlns="http://www.zkoss.org/2005/zul"
+    xmlns:h="http://www.w3.org/1999/xhtml"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+
+
+    <window apply="estoqueadmin.LoginComposer">
+
+        <style src="/css/pages/login.css"/>
+
+        <include src="template/cabecalho_naologado.zul"/>
+        <h:div>
+            <h:div class="divLogin">
+                <h:form id="formLogin" method="POST" action="${resource(file: 'j_spring_security_check')}">
+                    <h:div>
+                        <h:div class="col-sm-3" style="padding:10px; margin-top:10px;">
+                            <label value="Usuário: " style="font-weight:bold; float:right;font-size:1.2em;"/>
+                        </h:div>
+                        <h:div class="col-sm-9" style="padding:10px;">
+                            <textbox name="j_username" id="j_username" width="100%" height="35px" sclass="txtLogin" style="font-size:1.2em;"/>
+                        </h:div>
+                    </h:div>
+                    <h:div>
+                        <h:div class="col-sm-3" style="padding:10px; margin-top:10px;">
+                            <label value="Senha: " style="font-weight:bold; float:right;font-size:1.2em;"/>
+                        </h:div>
+                        <h:div class="col-sm-9" style="padding:10px;">
+                            <textbox name="j_password" type="password" id="j_password" width="100%" height="35px" sclass="txtSenha" style="font-size:1.2em;"/>
+                        </h:div>
+                    </h:div>
+                    <h:div>
+                        <button id="btnEntrar" width="100%" height="35px" type="submit" label="Entrar" sclass="btn-primary btnLogin" style="font-weight: bold;"/>
+                    </h:div>
+                    <h:div style="text-align:center;">
+                        <h:div style="height:10px"></h:div>
+                        <label sclass="lblMsg" value="Usuário e/ou senha inválidos" if="#{param.msg=='ERROR'}" />
+                        <label sclass="lblMsg" value="Você não tem permissão para acessar a página. Faça o login." if="#{param.msg=='ACESSONEGADO'}" />
+                        <label sclass="lblMsg" value="Você foi desconectado do sistema." if="#{param.msg=='LOGOUT'}" />
+                    </h:div>
+                </h:form>
+            </h:div>
+        </h:div>
+    </window>
+
+</zk>

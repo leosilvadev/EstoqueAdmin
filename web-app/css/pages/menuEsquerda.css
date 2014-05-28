@@ -1,0 +1,148 @@
+
+.menuEsquerda{
+    top: 60px;
+    width: 200px;
+    height: 100%;
+    float: left;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 5px;
+    position: fixed;
+}
+
+.menuEsquerdaMin{
+    top: 60px;
+    width: 55px;
+    height: 100%;
+    float: left;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 5px;
+    position: fixed;
+}
+
+.menuEsquerdaMin .z-label{
+    display: none;
+}
+
+.mensagem{
+    position: fixed;
+    z-index: 9999;
+    right: 0;
+    max-width: 300px;
+    margin-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-shadow: 5px 5px 5px #888888;
+    opacity:0.8;
+    filter:alpha(opacity=80);
+}
+
+.menuItem{
+    padding: 10px;
+    font-size: medium;
+    border-bottom: thin #1f6377;
+    color: #5e5e5e;
+}
+
+.menuItem:HOVER{
+    color: #0088cc;
+    opacity:0.5;
+    filter:alpha(opacity=5 0);
+}
+
+.menuItemSelecionado{
+    color: white;
+    background-color: #0088cc;
+    opacity:0.8;
+    filter:alpha(opacity=8 0);
+}
+
+a:HOVER{
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.menuDivisor{
+    margin-top:5px;
+    margin-bottom:5px;
+    border-bottom: #E9E9E9 inset 1px;
+}
+
+.floatRight{
+    float: right;
+}
+
+.divConteudoPrincipal{
+    margin-left: 200px;
+    margin-top: 60px;
+}
+
+.divConteudoPrincipalMax{
+    margin-left: 55px;
+    margin-top: 60px;
+}
+
+.divPesquisa{
+    padding-left:0px;
+    padding-right:0px;
+    margin:0px;
+}
+
+.divListagem{
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.divFluxo{
+    padding: 10px;
+    width:100%;
+    float: left;
+    color: #006dba;
+}
+
+.divFluxo span{
+    font-size: 1.6em;
+    color: #006dba;
+}
+
+.divFluxo span:HOVER{
+    color: #0e90d2;
+}
+
+.labelMenu{
+    font-size: 1.0em;
+    margin-left: 10px;
+}
+
+.btnExpansao{
+    width: 100%;
+}
+
+.minimizar{
+    text-align:center;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.maximizar{
+    text-align:center;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.to_left{
+    background: url("/images/collapse.png") no-repeat;
+    height: 50px;
+    margin-left: 70px;
+}
+
+.to_right{
+    background: url("/images/expand.png") no-repeat;
+    height: 50px;
+}

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit" root="modalDetalhesVenda"?>
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<?link rel="stylesheet" type="text/css" href="/css/base.css"?>
+
+<zk xmlns="http://www.zkoss.org/2005/zul"
+    xmlns:h="http://www.w3.org/1999/xhtml"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+
+    <window id="modalDetalhesVenda" title="Detalhes da Venda" border="normal" width="700px"
+            apply="venda.DetalhesComposer"
+            position="center,center" closable="true"
+            action="show: slideDown;hide: slideUp"
+            sclass="well">
+
+        <grid id="form">
+            <columns>
+                <column width="25%" height="0px" />
+                <column width="15%" height="0px" />
+                <column width="15%" height="0px" />
+                <column width="20%" height="0px" />
+                <column width="25%" height="0px" />
+            </columns>
+            <rows>
+                <row spans="1, 4">
+                    <label value="Valor total: " sclass="bold" style="float: right;" />
+                    <doublebox id="txtValorVenda" value="0" format="R$ #,##0.00" width="300px"
+                               constraint="no negative: Insira um valor maior que zero,no empty: Insira um valor maior que zero"
+                               readonly="true" height="35px"/>
+                </row>
+                <row spans="1, 4">
+                    <label value="Desconto (%): " sclass="bold" style="float: right;" />
+                    <doublebox id="txtDesconto" value="0" sclass="txtDesconto" width="100px" readonly="true"
+                               height="35px"/>
+                </row>
+                <row spans="1, 4">
+                    <label value="Valor com desconto: " sclass="bold" style="float: right;" />
+                    <doublebox id="txtValorComDesconto" value="0" format="R$ #,##0.00" width="300px" readonly="true"
+                               height="35px"/>
+                </row>
+                <row spans="1, 4">
+                    <label value="Pagamento: " sclass="bold" style="float: right;" />
+                    <textbox id="txtFormaPagamento" readonly="true" width="80%" height="35px"/>
+                </row>
+                <row spans="5">
+                    <listbox id="lstProdutosAdicionados" emptyMessage="Nenhum produto foi adicionado a venda"
+                             vflex="true" height="150px">
+                        <listhead>
+                            <listheader sort="auto" label="Descricao" width="40%"/>
+                            <listheader sort="auto" label="Marca" width="25%"/>
+                            <listheader sort="auto" label="Quantidade" width="15%" align="right"/>
+                            <listheader sort="auto" label="Preco" width="20%" align="right"/>
+                        </listhead>
+                    </listbox>
+                </row>
+            </rows>
+        </grid>
+
+    </window>
+
+</zk>

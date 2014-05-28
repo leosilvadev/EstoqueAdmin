@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit" root="modalEfetivarPedido" ?>
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<?link rel="stylesheet" type="text/css" href="/css/base.css"?>
+
+<zk xmlns="http://www.zkoss.org/2005/zul"
+    xmlns:h="http://www.w3.org/1999/xhtml"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+
+    <window id="modalEfetivarPedido" title="Efetivação de Pedido" border="normal" width="700px"
+            apply="pedido.EfetivarPedidoComposer" position="center,center" closable="true" action="show: slideDown;hide: slideUp"
+            style="border: #000000 medium; padding: 10px; font-weight: bold;" sclass="well">
+
+        <grid>
+            <columns>
+                <column width="30%"/>
+                <column width="70%;"/>
+            </columns>
+            <rows>
+                <row style="padding: 10px;">
+                    <label value="Valor total da compra: " style="font-size: medium;"/>
+                    <label id="lblValorTotal" value="R$ 0.00" style="font-size: medium;"/>
+                </row>
+            </rows>
+        </grid>
+        <grid>
+            <columns>
+                <column width="100%" height="0px" />
+            </columns>
+            <rows>
+                <row sclass="toRight">
+                    <listbox id="lstProdutosAdicionadosEfetivacao" emptyMessage="Nenhum produto foi adicionado ao pedido" height="150px" hflex="true">
+                        <listhead>
+                            <listheader sort="auto" label="Descricao" width="35%"/>
+                            <listheader sort="auto" label="Marca" width="20%"/>
+                            <listheader sort="auto" label="Quantidade" width="15%" align="right"/>
+                            <listheader sort="auto" label="Valor unitário" width="15%" align="right"/>
+                            <listheader sort="auto" label="Remover" width="15%" align="center"/>
+                        </listhead>
+                    </listbox>
+                </row>
+            </rows>
+            <foot>
+                <footer span="5">
+                    <button label="Cancelar" id="btnCancelar" image="/images/cancel.png" width="49.5%" height="35px"
+                            sclass="btn-default"/>
+                    <button label="Efetivar" id="btnEfetivar" image="/images/save.png" width="49.5%" height="35px"
+                            sclass="btn-primary"/>
+                </footer>
+            </foot>
+        </grid>
+
+        <script type="text/javascript" src="/js/jquery-maskmoney.js" />
+        <script type="text/javascript" src="/js/mask.js" />
+
+    </window>
+
+</zk>

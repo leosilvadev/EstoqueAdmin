@@ -1,0 +1,62 @@
+
+.navbar{
+    background-color: #0088cc;
+    margin: 0px;
+}
+
+.navbar a{
+    color: #ffffff;
+}
+
+.navbar a:HOVER{
+    background-color: #9acfea !important;
+}
+
+.navbar-header span{
+    color: #ffffff;
+}
+
+.btnCabecalho span{
+    padding: 10px !important;
+    margin: 5px !important;
+}
+body{
+    padding:0px !important;
+}
+
+.z-window-content{
+    padding:0px !important;
+}
+
+span{
+    font-size: medium;
+}
+
+.msgErro{
+    margin: 5px;
+    padding: 5px;
+    text-align: center;
+    background-color: #c9302c;
+    color: #ffffff;
+    border-radius: 8px;
+}
+
+.msgAviso{
+    margin: 5px;
+    padding: 5px;
+    text-align: center;
+    background-color: lightgoldenrodyellow;
+    border-radius: 8px;
+}
+
+.msgInfo{
+    margin: 5px;
+    padding: 5px;
+    text-align: center;
+    background-color: #2aabd2;
+    border-radius: 8px;
+}
+
+.divisoria{
+    padding-left: 10px;
+}

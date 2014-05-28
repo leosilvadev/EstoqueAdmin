@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit" ?>
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+
+<zk xmlns="http://www.zkoss.org/2005/zul"
+    xmlns:h="http://www.w3.org/1999/xhtml"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+
+    <style src="/css/pages/menuEsquerda.css"/>
+    <style src="/css/base.css"></style>
+
+    <h:div class="menuEsquerda well">
+        <h:a href="../orcamento/listaOrcamento.zul">
+            <h:div class="menuItem">
+                <h:img src="../images/orcamento.png" width="20px" height="20px" style="margin:5px;"/>
+                <label value="Orcamentos" sclass="labelMenu"/>
+                <h:span class="itemOrcamentos glyphicon floatRight" style="margin-top:5px;"></h:span>
+            </h:div>
+        </h:a>
+        <h:div class="menuDivisor"></h:div>
+        <h:a href="../venda/listaVenda.zul">
+            <h:div class="menuItem">
+                <h:img src="../images/venda.png" width="20px" height="20px" style="margin:5px;"/>
+                <label value="Vendas" sclass="labelMenu"/>
+                <h:span class="itemVendas glyphicon floatRight" style="margin-top:5px;"></h:span>
+            </h:div>
+        </h:a>
+        <h:div class="menuDivisor"></h:div>
+        <h:a href="../pedido/listaPedido.zul">
+            <h:div class="menuItem">
+                <h:img src="../images/pedido.png" width="20px" height="20px" style="margin:5px;"/>
+                <label value="Pedidos" sclass="labelMenu"/>
+                <h:span class="itemPedidos glyphicon floatRight" style="margin-top:5px;"></h:span>
+            </h:div>
+        </h:a>
+        <h:div class="menuDivisor"></h:div>
+        <h:a href="../produto/listaProduto.zul">
+            <h:div class="menuItem">
+                <h:img src="../images/produto.png" width="20px" height="20px" style="margin:5px;"/>
+                <label value="Produtos" sclass="labelMenu"/>
+                <h:span class="itemProdutos glyphicon floatRight" style="margin-top:5px;"></h:span>
+            </h:div>
+        </h:a>
+        <h:div class="menuDivisor"></h:div>
+        <h:a href="../fornecedor/listaFornecedor.zul">
+            <h:div class="menuItem">
+                <h:img src="../images/fornecedor.png" width="20px" height="20px" style="margin:5px;"/>
+                <label value="Fornecedores" sclass="labelMenu"/>
+                <h:span class="itemFornecedores glyphicon floatRight" style="margin-top:5px;"></h:span>
+            </h:div>
+        </h:a>
+        <h:div class="menuDivisor"></h:div>
+        <h:a href="#">
+            <h:div class="menuItem">
+                <h:img src="../images/dashboard.png" width="20px" height="20px" style="margin:5px;"/>
+                <label value="Dashboard" sclass="labelMenu"/>
+                <h:span class="itemDashboard glyphicon floatRight" style="margin-top:5px;"></h:span>
+            </h:div>
+        </h:a>
+        <h:div class="menuDivisor"></h:div>
+        <a id="btnExpansao" sclass="minimizar btnExpansao">
+            <h:div class="divExpansao to_left">
+            </h:div>
+        </a>
+        <h:div class="menuDivisor"></h:div>
+    </h:div>
+
+    <script type="javascript">
+        zk.afterMount(function() {
+            $('.btnExpansao').on('click',function(){
+                if($('.btnExpansao').hasClass('minimizar')){
+                    $('.btnExpansao').removeClass('minimizar');
+                    $('.btnExpansao').addClass('maximizar');
+                    $('.menuEsquerda').addClass('menuEsquerdaMin');
+                    $('.divConteudoPrincipal').addClass('divConteudoPrincipalMax');
+                    $('.iconeExpansao').removeClass('glyphicon-fast-backward');
+                    $('.iconeExpansao').addClass('glyphicon-fast-forward');
+                    $('.divExpansao').removeClass('to_left');
+                    $('.divExpansao').addClass('to_right');
+                }else{
+                    $('.btnExpansao').removeClass('maximizar');
+                    $('.btnExpansao').addClass('minimizar');
+                    $('.menuEsquerda').removeClass('menuEsquerdaMin');
+                    $('.divConteudoPrincipal').addClass('divConteudoPrincipal');
+                    $('.divConteudoPrincipal').removeClass('divConteudoPrincipalMax');
+                    $('.iconeExpansao').removeClass('glyphicon-fast-forward');
+                    $('.iconeExpansao').addClass('glyphicon-fast-backward');
+                    $('.divExpansao').removeClass('to_right');
+                    $('.divExpansao').addClass('to_left');
+                }
+            });
+        });
+
+        function removerMensagens(){
+            $(".mensagem").delay(5000).fadeOut(1000);
+        }
+    </script>
+
+</zk>

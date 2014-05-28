@@ -1,0 +1,14 @@
+/target
+/target/**
+target/**
+*.class
+target/
+.settings/**
+*.war
+/out/**
+stacktrace.log
+test/reports
+.idea
+*.iml
+*.iws
+*.ipr

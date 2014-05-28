@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?link rel="stylesheet" type="text/css" href="/css/base.css"?>
+
+<zk xmlns="http://www.zkoss.org/2005/zul"
+    xmlns:h="http://www.w3.org/1999/xhtml"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+
+    <style src="/css/base.css"></style>
+    <style src="/css/pages/cabecalho.css"/>
+    
+    <window apply="template.CabecalhoComposer">
+        <h:header class="navbar navbar-fixed-top bs-docs-nav" id="top" role="banner">
+                <h:div class="navbar-header">
+                    <h:button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+                        <h:span class="glyphicon glyphicon-th-list"></h:span>
+                    </h:button>
+                    <h:div style="margin-left: 10px; margin-top: 12px;">
+                        <h:img src="../images/estoque_admin.png" width="30px" height="30px" style=" margin-top: -10px;"/>
+                        <label value="Estoque Admin" style="margin-left: 20px; font-size: 2em;"/>
+                    </h:div>
+                </h:div>
+                <h:nav class="navbar-collapse bs-navbar-collapse collapse" role="navigation" style="height: 1px;">
+                    <h:ul class="nav navbar-nav navbar-right">
+                        <h:li>
+                            <h:a href="#" id="linkMensagens">
+                                <h:span id="spanMensagens" class="glyphicon glyphicon-envelope"></h:span> Mensagens
+                            </h:a>
+                        </h:li>
+                        <h:li>
+                           <h:a href="../j_spring_security_logout">
+                               <h:span class="glyphicon glyphicon-log-out"></h:span>
+                               <h:b> Sair do sistema</h:b>
+                           </h:a>
+                       </h:li>
+                    </h:ul>
+                </h:nav>
+        </h:header>
+
+
+        <script type="text/javascript" src="/js/jquery.maskedinput.min.js" />
+        <script type="text/javascript" src="/js/jquery-maskmoney.js" />
+    </window>
+</zk>

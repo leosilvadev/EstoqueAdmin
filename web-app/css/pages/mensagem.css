@@ -1,0 +1,16 @@
+
+.mensagemEstoqueVazio{
+    background-color: yellow;
+    opacity:0.7;
+    filter:alpha(opacity=70);
+    color:black;
+    font-weight:bold;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+
+.mensagem{
+    width:100%;
+    font-weight: bold;
+}

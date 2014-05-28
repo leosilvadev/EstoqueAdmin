@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<?page title="Gerenciamento de Vendas" ?>
+<?link rel="stylesheet" type="text/css" href="/css/base.css"?>
+
+<zk xmlns="http://www.zkoss.org/2005/zul"
+    xmlns:h="http://www.w3.org/1999/xhtml"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+
+    <window apply="venda.ListaVendaComposer" id="telaListaVenda">
+        <include src="../template/cabecalho.zul"/>
+        <include src="../template/menuEsquerda.zul"/>
+
+        <h:div class="divConteudoPrincipal">
+            <h:div id="divMensagens"></h:div>
+            <h:div class="divListagem">
+                <h:div class="well row divPesquisa">
+                    <h:div class="col-sm-12">
+                        <label value="Pesquise pela data da venda: " sclass="labelListagem"/>
+                        <image src="/images/funnel.png" style="padding-right:10px;" />
+                        <h:div style="margin-top:10px;">
+                            <label value="De: " sclass="labelListagem"/>
+                            <datebox id="dtInicialPesquisa" readonly="true"/>
+                            <label value=" até " sclass="labelListagem"/>
+                            <datebox id="dtFinalPesquisa" readonly="true"/>
+                            <button id="btnPesquisa" label="Pesquisar" sclass="btnPesquisa btn-default"/>
+                        </h:div>
+                    </h:div>
+                </h:div>
+                <listbox id="lstVendas" emptyMessage="Nenhuma venda cadastrada">
+                    <listhead>
+                        <listheader sort="auto" align="center" label="Código" width="10%"/>
+                        <listheader sort="auto" align="center" label="Data" width="20%"/>
+                        <listheader sort="auto" align="right" label="Pagamento" width="10%"/>
+                        <listheader sort="auto" align="right" label="Valor Total" width="10%"/>
+                        <listheader sort="auto" align="right" label="Desconto" width="10%"/>
+                        <listheader sort="auto" align="right" label="Valor Liquido" width="10%"/>
+                        <listheader sort="auto" align="center" label="Detalhes" width="10%"/>
+                        <listheader sort="auto" align="center" label="Estorno" width="10%"/>
+                        <listheader sort="auto" align="center" label="Excluir" width="10%"/>
+                    </listhead>
+                    <listfoot>
+                        <listfooter span="9">
+                            <button id="btnNovaVenda" label="Registrar nova venda"
+                                    autodisable="self" image="/images/new.png"
+                                    sclass="btn-primary"
+                                    style="float:right; margin: 10px;"/>
+                        </listfooter>
+                    </listfoot>
+                </listbox>
+                <paging id="paginacao" pageSize="10" detailed="true"/>
+            </h:div>
+        </h:div>
+        <script type="text/javascript">
+            zk.afterMount(function() {
+                $('.menuItemSelecionado').removeClass('menuItemSelecionado');
+                $('.itemVendas').parent().addClass('menuItemSelecionado');
+            });
+        </script>
+    </window>
+
+</zk>

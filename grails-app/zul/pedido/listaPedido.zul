@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<?page title="Gerenciamento de Pedidos" ?>
+
+<zk xmlns="http://www.zkoss.org/2005/zul"
+    xmlns:h="http://www.w3.org/1999/xhtml"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+
+   <window apply="pedido.ListaPedidoComposer">
+        <include src="../template/cabecalho.zul"/>
+        <include src="../template/menuEsquerda.zul"/>
+
+        <h:div class="divConteudoPrincipal">
+            <h:div id="divMensagens"></h:div>
+            <h:div class="divListagem">
+                <h:div class="well row divPesquisa">
+                    <h:div class="col-sm-4">
+                        <label value="Pesquise pelo nome do fornecedor: " sclass="labelListagem"/>
+                        <image src="/images/funnel.png" style="padding-right:10px;" />
+                        <combobox id="cbFornecedor" fulfill="onOpen" autocomplete="true"
+                                 placeholder="Selecione um fornecedor para pesquisar"
+                                 width="400px" autodrop="true" style="margin-top: 10px;"/>
+                    </h:div>
+                </h:div>
+                <listbox id="lstPedidos" emptyMessage="Nenhum pedido realizado">
+                    <listhead>
+                        <listheader sort="auto" align="center" label="Código" width="10%"/>
+                        <listheader sort="auto" align="left" label="Fornecedor" width="30%"/>
+                        <listheader sort="auto" align="center" label="Data registro" width="15%"/>
+                        <listheader sort="auto" align="right" label="Valor Total" width="10%"/>
+                        <listheader sort="auto" align="center" label="Status" width="15%"/>
+                        <listheader sort="auto" align="center" label="" width="10%"/>
+                        <listheader sort="auto" align="center" label="" width="10%"/>
+                    </listhead>
+                    <listfoot>
+                        <listfooter span="7" >
+                            <button id="btnNovoPedido" label="Novo Pedido" width="200px" height="35px"
+                                    autodisable="self" image="/images/new.png"
+                                    style="float:right; margin: 10px;"
+                                    sclass="btn btn-primary"/>
+                        </listfooter>
+                    </listfoot>
+                </listbox>
+                <paging id="paginacao" pageSize="10" detailed="true"/>
+           </h:div>
+        </h:div>
+        <script type="text/javascript">
+            zk.afterMount(function() {
+                $('.menuItemSelecionado').removeClass('menuItemSelecionado');
+                $('.itemPedidos').parent().addClass('menuItemSelecionado');
+            });
+        </script>
+    </window>
+
+</zk>

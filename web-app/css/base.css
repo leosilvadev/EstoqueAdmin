@@ -1,0 +1,164 @@
+@CHARSET "ISO-8859-1";
+
+.sombreado{
+    -moz-box-shadow:    5px 5px 5px #000000;
+    -webkit-box-shadow: 5px 5px 5px #000000;
+    box-shadow:         5px 5px 5px #000000;
+}
+
+body{
+    font-size: 1.2em;
+    padding:0px !important;
+}
+
+.z-combobox-input{
+    height: 30px;
+}
+
+.z-combobox-button{
+    height: 30px;
+}
+
+.z-window-content{
+    padding:0px !important;
+}
+
+
+
+.z-row-inner{
+    padding: 5px !important;
+}
+
+
+
+
+.z-messagebox-window .z-window-content{
+    padding:10px !important;
+}
+
+.z-messagebox-window .z-messagebox-button{
+    width: 100px;
+}
+
+
+
+.bold{
+    font-size: 1.2em;
+	font-weight:bold;
+}
+
+.z-panel-header {
+	font-size: 18px !important;
+	font-weight: bold !important;
+	padding: 10px !important;
+}
+
+.z-toolbarbutton-cnt{
+	padding: 10px;
+	font-size: 12px !important;
+	font-weight: bold !important;
+}
+.footer{
+	padding: 10px !important;
+	color: white !important;
+	font-weight: bold !important;
+	text-align: center !important;
+	background-color: black !important;
+}
+
+.z-window-header{
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.z-label{
+    font-weight: bold;
+}
+
+.toRight{
+    text-align: right;
+}
+
+.z-auxheader{
+    border-left: 0px;
+    border-right: 0px;
+}
+.z-auxheader-content{
+    padding:0px;
+}
+
+.z-textbox{
+    height: 30px;
+    font-size: 1.2em;
+}
+
+.z-intbox{
+    height: 30px;
+    font-size: 1.2em;
+}
+
+.z-doublebox{
+    height: 30px;
+    font-size: 1.2em;
+}
+
+.z-datebox-input{
+    height: 30px;
+    font-size: 1.2em;
+}
+
+.z-combobox-input{
+    height: 30px;
+    font-size: 1.0em;
+}
+
+
+
+.labelListagem{
+    font-weight: bold;
+    font-size: 1.3em;
+}
+
+.z-datebox-button{
+    height: 30px;
+}
+
+.btnPesquisa{
+    height: 35px;
+    margin-left: 10px;
+}
+
+
+
+
+.z-listcell-content{
+    font-size: 1.2em;
+}
+
+
+
+.z-listbox-header{
+    width: 100% !important;
+}
+
+.z-listbox-body{
+    width: 100% !important;
+}
+
+.z-listbox-footer{
+    width: 100% !important;
+}
+
+
+
+.pagination{
+    float: left;
+}
+
+.-info{
+    margin-top: 25px;
+    margin-right: 10px;
+    float: right;
+}
+
+

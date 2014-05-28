@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit" root="modalCadastroEstabelecimento"?>
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+
+<zk xmlns="http://www.zkoss.org/2005/zul"
+    xmlns:h="http://www.w3.org/1999/xhtml"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+
+    <window id="modalCadastroEstabelecimento" apply="estoqueadmin.CadastroEmpresaComposer">
+        <style src="/css/base.css"></style>
+        <style src="/css/pages/cadastro.css"/>
+        <style>
+            .well{
+                margin-bottom: 0px;
+            }
+
+            .row{
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+            .z-tabpanels{
+                border: lightgray thin solid;
+                -webkit-border-radius: 0px 0px 40px 40px;
+                -moz-border-radius: 0px 0px 40px 40px;
+                border-radius: 0px 0px 40px 40px;
+            }
+            .opcao{
+                width: 25%;
+                border-bottom: none;
+                padding: 10px;
+            }
+
+            .opcao .z-tab-text{
+                font-size: 1.6em;
+            }
+
+            .opcao:HOVER{
+                -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+                filter: alpha(opacity=50);
+                -moz-opacity:0.5;
+                -khtml-opacity: 0.5;
+                opacity: 0.5;
+            }
+
+            .opcao .z-tab-text:HOVER{
+                color: #b1cbd5;
+                text-decoration: none;
+            }
+
+            .z-textbox{
+                height: 35px !important;
+                font-size: 1.5em !important;
+            }
+
+            .z-label{
+                font-size: 1.5em !important;
+            }
+
+            .z-a{
+                color: #dcdcdc;
+            }
+        </style>
+
+        <include src="template/cabecalho_naologado.zul"/>
+        <h:div id="divMensagens"></h:div>
+        <tabbox width="100%" sclass="nav_tabs container" id="tabFluxo" style="margin-top: 10px;">
+            <tabs id="tabs">
+                <tab label="Informações Gerais" id="tabInformacoesGerais" sclass="opcao well"/>
+                <tab label="Informações Usuário" id="tabInformacoesAcesso" sclass="opcao well" visible="false" />
+                <tab label="Planos" id="tabPlanos" sclass="opcao well" visible="false" />
+                <tab label="Termos de uso" id="tabTermos" sclass="opcao well" visible="false" />
+            </tabs>
+
+            <tabpanels>
+                <tabpanel sclass="well">
+                    <toolbar hflex="true">
+                        <h:div class="row">
+                            <h:div class="col-sm-6">
+                                <label value="Nome da empresa: " sclass="labelCadastro"/>
+                                <textbox id="txtNome"
+                                        tooltip="true" tooltiptext="Qual o nome da sua empresa? Escreva aqui..."/>
+                            </h:div>
+                            <h:div class="col-sm-6">
+                                <label value="CPF/CNPJ: " sclass="labelCadastro"/>
+                                <textbox id="txtDocumento"
+                                        tooltip="true" tooltiptext="Qual o CPF/CNPJ da sua empresa? Escreva aqui..."/>
+                            </h:div>
+                        </h:div>
+                        <h:div class="row">
+                            <h:div class="col-sm-6">
+                                <label value="CEP: " sclass="labelCadastro"/>
+                                <textbox id="txtCEP" placeholder="Digite seu CEP aqui que encontraremos seu endereço"
+                                         tooltip="true" tooltiptext="Qual o CEP da sua empresa? Escreva aqui..."/>
+                                <a href="http://www.buscacep.correios.com.br/" target="_blank">Não sabe o seu CEP?</a>
+                            </h:div>
+                        </h:div>
+                        <h:div class="row">
+                            <h:div class="col-sm-12">
+                                <label value="Endereço: " sclass="labelCadastro"/>
+                                <textbox id="txtEndereco"
+                                         tooltip="true" tooltiptext="Qual o endereco da sua empresa? Escreva aqui..."/>
+                                <label value="O seu endereço está correto?" sclass="labelCadastro"/>
+                            </h:div>
+                        </h:div>
+                        <h:div class="row">
+                            <h:div class="col-sm-6">
+
+                            </h:div>
+                            <h:div class="col-sm-6">
+                                <button id="btnInformacoesGerais" label="Próximo" style="float:right;"
+                                        width="200px" image="/images/next.png"/>
+                            </h:div>
+                        </h:div>
+                    </toolbar>
+                </tabpanel>
+                <tabpanel sclass="well">
+                    <toolbar hflex="true">
+                        <h:div class="row">
+                            <h:div class="col-sm-12">
+                                <label value="Usuario: " sclass="labelCadastro"/>
+                                <textbox id="txtLogin"
+                                        tooltip="true" tooltiptext="Qual o login de acesso você quer utilizar? Escreva aqui.."/>
+                            </h:div>
+                        </h:div>
+                        <h:div class="row">
+                            <h:div class="col-sm-6">
+                                <label value="Senha: " sclass="labelCadastro"/>
+                                <textbox id="txtSenha" type="password"
+                                        tooltip="true" tooltiptext="Qual sua senha? Escreva aqui.."/>
+                            </h:div>
+                            <h:div class="col-sm-6">
+                                <label value="Confirme a senha: " sclass="labelCadastro"/>
+                                <textbox id="txtConfirmaSenha" type="password"
+                                        tooltip="true" tooltiptext="Insira novamente sua senha aqui..."/>
+                            </h:div>
+                        </h:div>
+                        <h:div class="row">
+                            <h:div class="col-sm-6">
+                                <button id="btnVoltarInformacoesGerais" label="Voltar"
+                                        width="200px" image="/images/back.png"/>
+                            </h:div>
+                            <h:div class="col-sm-6">
+                                <button id="btnInformacoesAcesso" label="Próximo" style="float:right;"
+                                        width="200px" image="/images/next.png"/>
+                            </h:div>
+                        </h:div>
+                    </toolbar>
+                </tabpanel>
+                <tabpanel sclass="well">
+                    <h:div class="row">
+                        <h:div class="col-sm-4" style="text-align:left;">
+                            <button id="btnBronze" tooltip="popupBronze" image="/images/bronze.png"/>
+                            <popup id="popupBronze" width="500px"/>
+                        </h:div>
+                        <h:div class="col-sm-4" style="text-align:center;">
+                            <button id="btnPrata" tooltip="popupPrata" image="/images/prata.png"/>
+                            <popup id="popupPrata" width="500px"/>
+                        </h:div>
+                        <h:div class="col-sm-4" style="text-align:right;">
+                            <button id="btnOuro" tooltip="popupOuro" image="/images/ouro.png"/>
+                            <popup id="popupOuro" width="500px"/>
+                        </h:div>
+                    </h:div>
+                    <h:div class="row">
+                        <h:div class="col-sm-4">
+                            <button id="btnVoltarInformacoesAcesso" label="Voltar"
+                                    width="200px" image="/images/back.png"/>
+                        </h:div>
+                        <h:div class="col-sm-4" style="text-align:center; font-size:1.2em;margin-top:10px;">
+                            <label id="lblPlanoEscolhido" sclass="labelCadastro"/>
+                        </h:div>
+                        <h:div class="col-sm-4">
+                            <button id="btnPlanos" label="Próximo" style="float:right;"
+                                    width="200px" image="/images/next.png" disabled="true"/>
+                        </h:div>
+                    </h:div>
+                </tabpanel>
+                <tabpanel sclass="well">
+                    <h:div class="row">
+                        <h:div class="col-sm-12">
+                            <h:div id="divTermosUso" style="text-align:center;"></h:div>
+                        </h:div>
+                    </h:div>
+                    <h:div class="row">
+                        <h:div class="col-sm-4">
+                            <button id="btnVoltarPlanos" label="Voltar"
+                                    width="200px" image="/images/back.png"/>
+                        </h:div>
+                        <h:div class="col-sm-8">
+                            <button id="btnFinaliza" label="Aceito os termos de uso, quero concluir cadastro" style="float:right;"
+                                    image="/images/ok.png"/>
+                        </h:div>
+                    </h:div>
+                </tabpanel>
+            </tabpanels>
+        </tabbox>
+    </window>
+
+</zk>

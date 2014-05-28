@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit" root="modalEditarProduto" ?>
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<?link rel="stylesheet" type="text/css" href="/css/base.css"?>
+
+<zk xmlns="http://www.zkoss.org/2005/zul"
+    xmlns:h="http://www.w3.org/1999/xhtml"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+
+    <window id="modalEditarProduto" title="Edição de Produto" border="normal" width="600px"
+                apply="produto.EditarProdutoComposer"
+                position="center,center" closable="true"
+                action="show: slideDown;hide: slideUp"
+                sclass="well">
+
+        <h:div id="divMensagensModal"></h:div>
+        <grid>
+            <columns>
+                <column width="30%" height="0px" />
+                <column width="70%" height="0px" />
+            </columns>
+            <rows>
+                <row sclass="toRight">
+                    <label value="Codigo: " sclass="bold"/>
+                    <textbox id="txtCodigo" sclass="txtCodigo form-control"
+                        placeholder="Insira aqui o codigo do produto"/>
+                </row>
+                <row sclass="toRight">
+                    <label value="Descricao: " sclass="bold"/>
+                    <textbox id="txtDescricao" sclass="txtDescricao form-control"
+                        placeholder="Descreva aqui o produto"/>
+                </row>
+                <row sclass="toRight">
+                    <label value="Marca: " sclass="bold"/>
+                    <textbox id="txtMarca" sclass="txtMarca form-control"
+                        placeholder="Insira aqui a marca do produto"/>
+                </row>
+                <row sclass="toRight">
+                    <label value="Unidade: " sclass="bold"/>
+                    <combobox id="cbUnidades" fulfill="onOpen" autocomplete="true"
+                              width="100%" autodrop="true"
+                              placeholder="Selecione a unidade"/>
+                </row>
+                <row sclass="toRight">
+                    <label value="Preço: " sclass="bold"/>
+                    <doublebox id="dbPreco" value="0.0" format="R$ #,##0.00"
+                        maxlength="20" width="100%" constraint="no negative" sclass="dbPreco money form-control"/>
+                </row>
+                <row sclass="toRight">
+                    <label value="Quantidade: " sclass="bold"/>
+                    <intbox id="intQuantidade" value="0" disabled="true"
+                            sclass="intQuantidade form-control" width="100%"/>
+                </row>
+                <row sclass="toRight">
+                    <label value="Quantidade Minima: " sclass="bold"/>
+                    <intbox id="intQuantidadeMinima" value="0" constraint="no negative" sclass="intQuantidade form-control" width="100%"/>
+                </row>
+                </rows>
+                <foot>
+                    <footer span="2">
+                        <button label="Cancelar" id="btnCancelar" image="/images/cancel.png" width="49.5%" height="35px" onClick=""/>
+                        <button label="Salvar" id="btnSalvar" image="/images/save.png" width="49.5%" height="35px"
+                            sclass="btn-primary"/>
+                    </footer>
+                </foot>
+       </grid>
+
+        <script type="text/javascript" src="/js/jquery-maskmoney.js" />
+        <script type="text/javascript">
+            function aplicarMascaras(){
+            }
+        </script>
+
+    </window>
+
+</zk>

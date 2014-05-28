@@ -1,0 +1,58 @@
+
+.row{
+    margin-bottom: 30px;
+}
+
+.z-tabs-content{
+    border: 0px;
+}
+
+.z-tabpanel{
+    border: 0px;
+}
+
+.z-toolbar{
+    background: transparent !important;
+}
+
+.z-toolbar{
+    border-style: inherit !important;
+}
+
+.z-label{
+    font-size: 1.4em !important;
+}
+
+.titulo{
+    font-size: 2em !important;
+    margin-left: 20px;
+}
+
+.z-textbox{
+    height: 35px;
+    width: 100%;
+    font-size: 1.4em;
+}
+
+.z-popup-content{
+    font-size: 0.85em !important;
+}
+
+#divTermosUso{
+    width: 100%;
+    height: 300px;
+    padding: 30px;
+    background-color: #ffffff;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    border-radius: 30px;
+    overflow: auto;
+}
+
+#divTermosUso div{
+    padding: 5px;
+}
+
+#divTermosUso .z-label{
+    font-weight: normal !important;
+}

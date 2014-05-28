@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<zk xmlns="http://www.zkoss.org/2005/zul"
+    xmlns:h="http://www.w3.org/1999/xhtml"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+
+
+    <style src="/css/base.css"></style>
+    <style src="/css/pages/cabecalho_naologado.css"/>
+
+    <h:div>
+        <h:header class="navbar navbar-static-top bs-docs-nav cabecalho" id="top" role="banner">
+            <h:div class="container">
+                <h:div class="navbar-header">
+                    <h:button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+                        <h:span class="glyphicon glyphicon-th-list"></h:span>
+                    </h:button>
+                </h:div>
+                <h:nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+                    <h:ul class="nav navbar-nav">
+                        <h:li>
+                            <h:div style="float:left;">
+                                <h:img src="images/estoque_admin.png" width="80px" height="80px"/>
+                            </h:div>
+                            <h:div style="float:left; padding-top:10px; margin-left:20px;">
+                                <h:div>
+                                    <h:a href="index.zul" class="principal">EstoqueAdmin</h:a>
+                                </h:div>
+                                <h:div>
+                                    <label sclass="labelPrincipal" value="O melhor sistema de gestão de estoque, pedidos, orçamentos, compras e vendas online"/>
+                                </h:div>
+                            </h:div>
+                        </h:li>
+                    </h:ul>
+                    <h:ul class="nav navbar-nav navbar-right">
+                        <h:li>
+                            <h:a class="btn btn-primary btnLogin" style="font-weight:bold;" href="login.zul">
+                                Já sou cadastrado
+                            </h:a>
+                        </h:li>
+                    </h:ul>
+                </h:nav>
+            </h:div>
+        </h:header>
+    </h:div>
+</zk>
